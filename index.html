@@ -1,74 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tip Calculator & Bill Splitter</title>
-    <!-- We connect our CSS file here so we can style it later -->
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
 </head>
 <body>
 
-    <main class="calculator-container">
+    <main class="main-container">
         
-        <!-- SECTION 1: INPUTS -->
-        <section class="input-section">
+        <section class="left-side">
             
-            <!-- Bill Amount Input -->
             <div class="input-group">
-                <label for="bill">Bill Amount</label>
-                <input type="number" id="bill" placeholder="0.00" min="0">
+                <label>Enter bill Amount</label>
+                <input type="number" id="bill-input" placeholder="0.00" oninput="calculate()">
             </div>
 
-            <!-- Tip Selection -->
             <div class="input-group">
-                <label>Select Tip %</label>
-                <div class="tip-grid">
-                    <button type="button" class="tip-btn" data-tip="10">10%</button>
-                    <button type="button" class="tip-btn" data-tip="15">15%</button>
-                    <button type="button" class="tip-btn" data-tip="20">20%</button>
-                    <input type="number" id="custom-tip" placeholder="Custom" min="0">
+                <label>Please select Tip %</label>
+                <div class="tip-buttons">
+                    <button type="button" onclick="clickBtn(10)">10%</button>
+                    <button type="button" onclick="clickBtn(15)">15%</button>
+                    <button type="button" onclick="clickBtn(20)">20%</button>
                 </div>
+                <input type="number" id="custom-tip-input" placeholder="Custom %" oninput="typeCustom()">
             </div>
 
-            <!-- Number of People Input -->
             <div class="input-group">
-                <div class="label-wrapper">
-                    <label for="people">Number of People</label>
-                    <!-- Error message placeholder for validation requirements -->
-                    <span id="people-error" class="error-msg"></span>
+                <div class="label-row">
+                    <label>Number of People</label>
+                    <span id="error-message"></span>
                 </div>
-                <input type="number" id="people" placeholder="1" min="1">
+                <input type="number" id="people-input" placeholder="1" oninput="calculate()">
             </div>
 
         </section>
 
-        <!-- SECTION 2: OUTPUTS -->
-        <section class="display-section">
+        <section class="right-side">
             
-            <div class="display-group">
-                <div>
-                    <h3>Tip Amount</h3>
-                    <p class="per-person">/ person</p>
-                </div>
-                <div class="amount">$<span id="tip-per-person">0.00</span></div>
+            <div class="display-row">
+                <h3>Tip Amount <br><span>/ person</span></h3>
+                <div class="result">$<span id="tip-per-person">0.00</span></div>
             </div>
 
-            <div class="display-group">
-                <div>
-                    <h3>Total Due</h3>
-                    <p class="per-person">/ person</p>
-                </div>
-                <div class="amount">$<span id="total-per-person">0.00</span></div>
+            <div class="display-row">
+                <h3>Total Due <br><span>/ person</span></h3>
+                <div class="result">$<span id="total-per-person">0.00</span></div>
             </div>
 
-            <button id="reset-btn" type="reset">RESET</button>
+            <button id="reset-btn" onclick="resetAll()">RESET</button>
 
         </section>
 
     </main>
 
-    <!-- We connect our JavaScript file at the bottom so it loads after the HTML -->
     <script src="script.js"></script>
 </body>
 </html>
