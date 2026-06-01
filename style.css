@@ -14,8 +14,9 @@ body {
 }
 
 .main-container {
-    background-color: white;
-    width: 700px;
+   background-color: white;
+    width: 100%;
+    max-width: 700px;
     padding: 30px;
     border-radius: 15px;
     display: flex;
@@ -124,4 +125,21 @@ input:focus {
     border-radius: 5px;
     cursor: pointer;
     color: #f8feff;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start; /* Stops vertical centering on scrollable phone pages */
+    }
+
+    .main-container {
+        flex-direction: column; /* Stacks the left inputs directly on top of the right panel */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .display-row {
+        margin-bottom: 20px; /* Gives the text rows room to breathe when stacked */
+    }
 }
