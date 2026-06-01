@@ -1,10 +1,11 @@
 # Tip Calculator Assessment Answers
+https://shehzadaathertanveer.github.io/dev-weekend-tip-calculator/
 
 ### 1. How to run
 To run this project locally on a fresh machine:
 1. Clone this repository or download the project folder.
 2. Open the folder on your computer.
-3. Double-click the `index.html` file to open it instantly in any web browser.
+3. Double-click the index.html file to open it instantly in any web browser.
 No installation or terminal setups are required because the project uses pure HTML, CSS, and JavaScript.
 
 ### 2. Stack & design choices
